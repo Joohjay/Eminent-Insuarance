@@ -247,6 +247,8 @@ nav ul li a:hover {
 
     .hamburger {
         display: flex !important;
+        background: red;
+        padding: 10px;
     }
 
 
