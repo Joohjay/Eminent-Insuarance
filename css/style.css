@@ -259,6 +259,10 @@ nav ul li a:hover {
         padding: 20px 0;
         margin-top: 10px;
     }
+    
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 .hamburger {
