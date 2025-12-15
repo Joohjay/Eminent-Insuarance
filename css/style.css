@@ -1,0 +1,364 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+main h1 {
+    margin-bottom: 20px;
+}
+
+main p {
+    margin: 0 auto 40px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+header {
+    background-color: #0f2a44;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #0f2a44;
+    position: relative;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.hero {
+    background: linear-gradient(rgba(15, 42, 68, 0.7), rgba(15, 42, 68, 0.7)),
+    background-size: cover;
+    background-position: center;
+    background-color: #f4f6f8;
+    text-align: center;
+    padding: 80px 30px;
+}
+
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #0f2a44;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #333;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li a {
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background-color: #ffcc00;
+    color: #0f2a44;
+    text-decoration: none; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 60px 40px;
+    background: #fff;
+}
+
+.service-box {
+    background: #f4f6f8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+.contact {
+    padding: 80px 60px;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-box:hover {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+    transform: translateY(-6px);
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 15px;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+.contact-box button {
+    background-color: #0f2a44;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    padding: 14px;
+}
+
+.contact-box button:hover {
+    background-color: #0b1f33;
+}
+
+.contact form {
+    max-width: 500px;
+    margin:  auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.content ul {
+    background: #fff;
+    padding:60px 40px;
+}
+
+.content ul li {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: flex !important;
+    }
+
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0f2a44;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links :active {
+        display: flex;
+}
+
+.nav-links li {
+        margin: 15px 0;
+    }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin: 4px 0;
+}
+
+footer {
+    background-color: #0f2a44;
+    color: #fff;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-box h4 {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.footer-box p{
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.whatsapp-btn{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
+
+footer .copyright{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.faq {
+    padding: 60px 40px;
+    background: #f4f6f8;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: 0f2a44;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.faq-item h3 {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+}
