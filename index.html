@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport meta ensures responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Eminent Insuarance Solutions</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -11,12 +12,14 @@
         <nav>
             <div class="logo">Eminent Insuarance Solutions</div>
 
-            <div class="hamburger" id="hamburger">
+            <!-- Accessible button for hamburger -->
+            <button class="hamburger" id="hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <ul class="nav-links">
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="service.html">Service</a></li>
@@ -25,7 +28,7 @@
         </nav>
     </header>
     
-    <main class="hero">
+    <main class="hero container">
         <h1>Protecting What Matters Most</h1>
 
         <p> Eminent Insurance Solutions is a trusted insurance services company
@@ -34,32 +37,30 @@
         unexpected risks.</p>
 
         <a href="service.html" class="btn">View Our Services</a>
-
     </main>
 
-<footer>
-<div class="footer-content">
-<div class="footer-box">
-<h4>Contact Us</h4>
-<p>📞 +255 781585781/ 255 717207931</p>
-<p>📧 eminentinsurance@hotmail.com</p>
-</div>
+    <footer>
+      <div class="footer-content container">
+        <div class="footer-box">
+          <h4>Contact Us</h4>
+          <p>📞 +255 781585781 / +255 717207931</p>
+          <p>📧 eminentinsurance@hotmail.com</p>
+        </div>
 
+        <div class="footer-box">
+          <h4>Location</h4>
+          <p>📍 Dar es Salaam, Tanzania</p>
+        </div>
 
-<div class="footer-box">
-<h4>Location</h4>
-<p>📍 Dar es Salaam, Tanzania</p>
-</div>
+        <div class="footer-box">
+          <h4>Chat With Us</h4>
+          <a href="https://wa.me/255781585781" target="_blank" class="whatsapp-btn">WhatsApp</a>
+        </div>
+      </div>
 
+      <p class="copyright">&copy; 2025 Eminent Insurance Solutions</p>
+    </footer>
 
-<div class="footer-box">
-<h4>Chat With Us</h4>
-<a href="https://wa.me/255781585781" target="_blank" class="whatsapp-btn">WhatsApp</a>
-</div>
-</div>
-<p class="copyright">&copy; 2025 Eminent Insurance Solutions</p>
-</footer>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
