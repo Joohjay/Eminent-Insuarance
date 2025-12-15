@@ -246,7 +246,7 @@ nav ul li a:hover {
     }
 
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
 
