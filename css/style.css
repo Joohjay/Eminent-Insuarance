@@ -44,6 +44,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 40px;
+    background: #0f2a44;
+    position: relative;
 }
 
 
@@ -259,10 +262,6 @@ nav ul li a:hover {
         padding: 20px 0;
         margin-top: 10px;
     }
-    
-    .nav-links.active {
-        display: flex;
-    }
 }
 
 .hamburger {
@@ -276,7 +275,6 @@ nav ul li a:hover {
     width: 25px;
     background: #fff;
     margin: 4px 0;
-    border-radius: 2px;
 }
 
 footer {
