@@ -1,0 +1,82 @@
+:root {
+  /* Brand palette */
+  --dark-blue: #0b2c4a;
+  --teal-blue: #0f6c7d;
+  --gold: #f0a500;
+  --white: #ffffff;
+  --light-gray: #e6e6e6;
+
+  /* Semantic light theme */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: rgba(15, 42, 68, 0.1);
+  --shadow-color: rgba(11, 44, 74, 0.08);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  /* Typography */
+  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-heading: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 5rem;
+  --space-4xl: 7rem;
+
+  /* Layout */
+  --header-height: 84px;
+  --header-height-mobile: 72px;
+  --container-max: 1280px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(11, 44, 74, 0.06);
+  --shadow-md: 0 8px 30px rgba(11, 44, 74, 0.08);
+  --shadow-lg: 0 20px 60px rgba(11, 44, 74, 0.12);
+  --shadow-gold: 0 10px 40px rgba(240, 165, 0, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-modal: 300;
+  --z-top: 400;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(17, 24, 39, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
