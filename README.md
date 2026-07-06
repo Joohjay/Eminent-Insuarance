@@ -62,9 +62,20 @@ npm run preview
 
 ## Deployment
 
-This project is configured for GitHub Pages deployment via GitHub Actions. Push to the `main` branch to trigger the deployment workflow.
+This project is configured for GitHub Pages deployment via GitHub Actions.
 
-The site base path is set to `/Eminent-Insuarance/` in both `vite.config.js` and `src/main.jsx` to match the existing GitHub Pages URL.
+### Enable GitHub Actions as the Pages source
+
+1. Go to your repository on GitHub: `https://github.com/Joohjay/Eminent-Insuarance`
+2. Open **Settings** → **Pages** (in the left sidebar)
+3. Under **Build and deployment** → **Source**, select **GitHub Actions**
+4. Make sure the `Deploy to GitHub Pages` workflow is enabled under **Actions**
+
+### Deploy
+
+Push to the `main` branch (or merge a pull request). The workflow will build the React app and deploy the `dist/` folder to GitHub Pages.
+
+The site base path is set to `/Eminent-Insuarance/` in both `vite.config.js` and `src/main.jsx` to match the existing GitHub Pages URL. A `public/404.html` file is also included so direct links to client-side routes (e.g. `/about`, `/services`) work correctly on GitHub Pages.
 
 ## Pages
 
