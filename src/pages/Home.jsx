@@ -37,7 +37,7 @@ function Home() {
       <Hero />
       <Statistics />
       <Partners />
-      <ServicesSection limit={8} />
+      <ServicesSection limit={8} linkToServices />
       <InsuranceCategories />
       <WhyChooseUs />
       <HowItWorks />

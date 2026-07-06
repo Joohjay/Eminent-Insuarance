@@ -5,6 +5,10 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/f
 function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const handleFooterLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const quickLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
@@ -57,7 +61,9 @@ function Footer() {
             <ul>
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <NavLink to={link.path}>{link.label}</NavLink>
+                  <NavLink to={link.path} onClick={handleFooterLinkClick}>
+                    {link.label}
+                  </NavLink>
                 </li>
               ))}
             </ul>

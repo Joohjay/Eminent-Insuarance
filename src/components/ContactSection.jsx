@@ -1,15 +1,59 @@
+import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
+const whatsappNumber = '255781585781';
+const contactEmail = 'eminentinsurance@hotmail.com';
+
 const contactCards = [
   { icon: Phone, title: 'Phone', details: ['+255 781 585 781', '+255 717 207 931'] },
-  { icon: Mail, title: 'Email', details: ['eminentinsurance@hotmail.com'] },
+  { icon: Mail, title: 'Email', details: [contactEmail] },
   { icon: MapPin, title: 'Office', details: ['Dar es Salaam, Tanzania'] },
   { icon: Clock, title: 'Business Hours', details: ['Mon - Fri: 8:00 AM - 5:00 PM', 'Sat: 9:00 AM - 1:00 PM'] },
 ];
 
+function buildContactMessage({ name, email, phone, service, message }) {
+  return [
+    'New insurance quote request',
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Phone: ${phone || 'Not provided'}`,
+    `Insurance Type: ${service || 'Not specified'}`,
+    '',
+    'Message:',
+    message,
+  ].join('\n');
+}
+
 function ContactSection({ showHeading = true }) {
+  const [searchParams] = useSearchParams();
+  const [submitMessage, setSubmitMessage] = useState('');
+  const selectedService = searchParams.get('service') || '';
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const formValues = {
+      name: formData.get('name')?.toString().trim() || '',
+      email: formData.get('email')?.toString().trim() || '',
+      phone: formData.get('phone')?.toString().trim() || '',
+      service: formData.get('service')?.toString().trim() || '',
+      message: formData.get('message')?.toString().trim() || '',
+    };
+    const contactMessage = buildContactMessage(formValues);
+    const subject = `Insurance Quote Request - ${formValues.service || formValues.name}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(contactMessage)}`;
+    const emailUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(contactMessage)}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    window.location.href = emailUrl;
+    setSubmitMessage('Your WhatsApp message and email draft are opening now.');
+  };
+
   return (
     <section className="section section-alt">
       <div className="container">
@@ -55,8 +99,7 @@ function ContactSection({ showHeading = true }) {
           >
             <h3 style={{ marginBottom: '24px', color: 'var(--text-primary)' }}>Send Us a Message</h3>
             <form
-              action="https://formspree.io/f/mwpgzrgr"
-              method="POST"
+              onSubmit={handleSubmit}
               className="contact-form"
               aria-label="Contact form"
             >
@@ -82,6 +125,7 @@ function ContactSection({ showHeading = true }) {
                   name="service"
                   placeholder="e.g. Motor, Health, Business"
                   list="service-options"
+                  defaultValue={selectedService}
                 />
                 <datalist id="service-options">
                   <option value="Motor Insurance" />
@@ -99,6 +143,11 @@ function ContactSection({ showHeading = true }) {
               <button type="submit" className="btn btn-primary">
                 <Send size={18} /> Send Message
               </button>
+              {submitMessage && (
+                <p className="form-submit-note" role="status">
+                  {submitMessage}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
